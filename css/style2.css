@@ -1,0 +1,13 @@
+.hidden {
+    display: none;
+}
+
+#formResponse {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    border-radius: 5px;
+    font-size: 1rem;
+}
