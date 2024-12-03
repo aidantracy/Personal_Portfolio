@@ -13,43 +13,49 @@
 }
 
 /* Projects Section Styling */
-#projects {
-    padding: 4rem 2rem;
-    text-align: center;
-}
-
 #projects-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .project-card {
-    background: #fff;
-    padding: 1.5rem;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .project-card h3 {
-    margin-bottom: 1rem;
-    color: #0078D7;
+    margin: 0 0 10px;
 }
 
 .project-card p {
-    margin-bottom: 1rem;
-    color: #555;
+    margin: 0 0 10px;
 }
 
-.project-card .btn {
-    margin-top: 1rem;
+.project-card a {
     display: inline-block;
+    margin-bottom: 10px;
+    color: #007BFF;
+    text-decoration: none;
 }
 
-.project-card .delete-btn {
-    background: #ff6b6b;
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+.deleteBTN {
+    background-color: #ff4d4d;
     color: white;
-    margin-top: 1rem;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.deleteBTN:hover {
+    background-color: #e60000;
 }
