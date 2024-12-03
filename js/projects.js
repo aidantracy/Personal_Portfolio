@@ -35,7 +35,7 @@ function loadProjects() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Trigger an initial load of projects
+ 
     loadProjects();
 
     // Add a new project
@@ -59,8 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
             xhr.addEventListener("load", function () {
                 if (xhr.status >= 200 && xhr.status < 300) {
                     alert("Project added");
-                    addProjectForm.reset(); // Clear form
-                    loadProjects(); // Reload projects
+                    addProjectForm.reset(); // Clear 
+                    loadProjects(); // Reload 
                 } else {
                     console.error("Error adding project:", xhr.responseText);
                 }
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             xhr.send(
                 JSON.stringify({
-                    id: projectTitle, // Assuming title is used as an ID in DynamoDB
+                    id: projectTitle, 
                     project_description: projectDescription,
                     project_url: projectUrl,
                 })
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// Create a project card dynamically
+// Creates a project card dynamically
 function createProjectCard(project) {
     const card = document.createElement("div");
     card.classList.add("project-card");
@@ -122,7 +122,8 @@ function deleteProject(projectId) {
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.addEventListener("load", function () {
         if (xhr.status >= 200 && xhr.status < 300) {
-            alert("Project deleted");
+            // todo
+            alert("Project deleted"); // fix this to show a message instead of an alert
             loadProjects(); // Reload projects
         } else {
             console.error("Error deleting project:", xhr.responseText);
