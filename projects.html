@@ -10,48 +10,53 @@
 <body>
     <header>
         <nav>
-            <div class="nav-container">
-                <h1 class="logo">Aidan Tracy</h1>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="reviews.html">Reviews</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
+            <h1 class="logo">Aidan Tracy</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
     </header>
+    
     <main>
-        <section id="projects">
+        <section id="projects" class="section">
             <header>
                 <h2>My Projects</h2>
+                <div class="header-buttons">
+                    <button id="load-projects" class="btn load-btn">Load Sample Projects</button>
+                    <a href="index.html" class="btn return-btn">← Back</a>
+                </div>
             </header>
-            <div id="projects-container">
-                <!-- Projects will be dynamically added here -->
+            
+            <div id="projects-container" class="projects-grid">
+                <!-- Projects will be loaded here -->
             </div>
-            <form id="add-project-form">
+            
+            <form id="add-project-form" class="project-form">
                 <h3>Add a New Project</h3>
                 <div class="form-group">
-                    <label for="project-title">Title:</label>
+                    <label for="project-title">Title</label>
                     <input type="text" id="project-title" name="project-title" placeholder="Project Title" required>
                 </div>
                 <div class="form-group">
-                    <label for="project-description">Description:</label>
+                    <label for="project-description">Description</label>
                     <textarea id="project-description" name="project-description" placeholder="Project Description" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="project-link">Link:</label>
-                    <input type="url" id="project-link" name="project-link" placeholder="Project Link" required>
+                    <label for="project-link">Link</label>
+                    <input type="url" id="project-link" name="project-link" placeholder="Project URL" required>
                 </div>
                 <button type="submit" class="btn">Add Project</button>
             </form>
         </section>
     </main>
+
     <footer>
         <p>© <span id="year"></span> Aidan Tracy. All Rights Reserved.</p>
+        <a href="resume.pdf" class="btn download-btn">Download Resume</a>
     </footer>
 
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+    <div id="toast" class="toast"></div>
 </body>
 </html>
