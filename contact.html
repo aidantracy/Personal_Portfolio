@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Aidan Tracy</title>
-    <link rel="stylesheet" href="css/style2.css">
-    <script defer src="js/form-processing.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <script defer src="js/contact.js"></script>
 </head>
 <body>
     <header>
@@ -18,32 +19,44 @@
             </ul>
         </nav>
     </header>
+    
     <main>
-        <section class="contact">
+        <section id="contact" class="section">
             <header>
-                <h2>Contact</h2>
+                <h2>Contact Me</h2>
+                <a href="index.html" class="btn return-btn">← Back</a>
             </header>
-            <p>Reach out to me:</p>
-            <form id="contactForm">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit" class="btn">Send</button>
-            </form>
-
-            <div id="formResponse" class="hidden">
-                <p>Thank you for reaching out! I will get back to you soon.</p>
+            
+            <div class="contact-container">
+                <form id="contact-form" class="contact-form">
+                    <h3>Send Me a Message</h3>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Message Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn submit-btn">Send Message</button>
+                </form>
             </div>
         </section>
     </main>
+
     <footer>
-        <p>© Aidan Tracy. All Rights Reserved.</p>
+        <p>© <span id="year"></span> Aidan Tracy. All Rights Reserved.</p>
+        <a href="resume.pdf" class="btn download-btn">Download Resume</a>
     </footer>
+
+    <div id="toast" class="toast"></div>
 </body>
 </html>

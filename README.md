@@ -49,3 +49,12 @@ TODO: Replace the wireframe below with you own design.
 ![wireframe](wireframe-projects.png)
 ![wireframe](wireframe-suggestions.png)
 ![wireframe](wireframe-contact.png)
+
+
+## Resources
+
+- Toast Notifications: Instagram - https://www.instagram.com/p/DC10BJfgUl1/?img_index=6
+- Focus Input: Instagram - https://www.instagram.com/p/C_lKSTYvdvV/
+- Images: MetaAI
+
+

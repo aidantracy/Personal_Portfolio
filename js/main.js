@@ -1,4 +1,7 @@
 
+/**
+ * This handles the form submission and displays a success message.
+ */
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contactForm");
     const responseDiv = document.getElementById("formResponse");
@@ -13,8 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
             message: document.getElementById("message").value,
         };
 
-        // Mock processing or validation
-        console.log("Form submitted:", formData);
+
+        // console.log("Form submitted:", formData);
 
         // Simulate a successful submission
         form.reset(); // Clear the form
@@ -23,7 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
+/**
+ * This function handles the navbar and section animations.
+ */
 document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector("header");
     const main = document.querySelector("main");
@@ -158,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Set current year in footer
+    // Sets the current year in the footer
     const yearSpan = document.getElementById("year");
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();

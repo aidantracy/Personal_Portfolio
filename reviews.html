@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reviews - Aidan Tracy</title>
-    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reviews.css">
+    <script defer src="js/reviews.js"></script>
 </head>
 <body>
     <header>
@@ -17,22 +19,45 @@
             </ul>
         </nav>
     </header>
+    
     <main>
-        <section class="reviews">
+        <section id="reviews" class="section">
             <header>
                 <h2>Reviews</h2>
+                <div class="header-buttons">
+                    <button id="load-reviews" class="btn load-btn">Load Sample Reviews</button>
+                    <a href="index.html" class="btn return-btn">← Back</a>
+                </div>
             </header>
-            <p>What people say about my work:</p>
-            <blockquote>
-                "Something said here - display dynamically from db." - Client A
-            </blockquote>
-            <blockquote>
-                "Something said here - display dynamically from db" - Client B
-            </blockquote>
+            
+            <div id="reviews-container" class="reviews-grid">
+                <!-- Reviews will be loaded here -->
+            </div>
+            
+            <form id="add-review-form" class="review-form">
+                <h3>Add a Review</h3>
+                <div class="form-group">
+                    <label for="reviewer-name">Name</label>
+                    <input type="text" id="reviewer-name" name="reviewer-name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="review-text">Review</label>
+                    <textarea id="review-text" name="review-text" placeholder="Write your review here" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="reviewer-title">Title/Company</label>
+                    <input type="text" id="reviewer-title" name="reviewer-title" placeholder="Your Title or Company" required>
+                </div>
+                <button type="submit" class="btn">Add Review</button>
+            </form>
         </section>
     </main>
+
     <footer>
-        <p>© Aidan Tracy. All Rights Reserved.</p>
+        <p>© <span id="year"></span> Aidan Tracy. All Rights Reserved.</p>
+        <a href="resume.pdf" class="btn download-btn">Download Resume</a>
     </footer>
+
+    <div id="toast" class="toast"></div>
 </body>
 </html>

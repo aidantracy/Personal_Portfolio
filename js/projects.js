@@ -14,13 +14,13 @@ const baseProjects = [
     },
     {
         id: "Programming Language",
-        project_description: "An interpretive programming language made from scratch.",
+        project_description: "An interpretive programming language similar to Python.",
         project_url: "https://github.com/aidantracy/Interpreter_Language",
         project_image: "img/prog-lang.jpg"
     }
 ];
 
-// Function to show toast notifications
+// Function to show toast message
 function showToast(message, duration = 3000) {
     const toast = document.getElementById('toast');
     toast.textContent = message;
@@ -31,6 +31,11 @@ function showToast(message, duration = 3000) {
     }, duration);
 }
 
+/**
+ * This function creates a project card element.
+ * @param {*} project 
+ * @returns 
+ */
 function createProjectCard(project) {
     const card = document.createElement("div");
     card.classList.add("project-card");
@@ -82,7 +87,7 @@ function createProjectCard(project) {
     return card;
 }
 
-// Load and display all projects
+// Loads and display all projects
 function loadProjects() {
     const xhr = new XMLHttpRequest();
     xhr.addEventListener("load", function () {
@@ -96,11 +101,9 @@ function loadProjects() {
                 });
             } catch (error) {
                 console.error("Error parsing projects:", error);
-                showToast("Error loading projects. Please try again.");
             }
         } else {
             console.error("Error loading projects:", xhr.responseText);
-            showToast("Error loading projects. Please try again.");
         }
     });
 
@@ -129,7 +132,7 @@ function deleteProject(projectId) {
     xhr.send();
 }
 
-// Load sample projects
+// Loads base projects
 function loadSampleProjects() {
     const projectsContainer = document.getElementById("projects-container");
     projectsContainer.innerHTML = "";
@@ -188,13 +191,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const projectTitle = document.getElementById("project-title").value.trim();
             const projectDescription = document.getElementById("project-description").value.trim();
             const projectUrl = document.getElementById("project-link").value.trim();
-            // const projectImage = document.getElementById("project-image").value.trim() || "img/default-project.jpg";
             const projectImage = "img/default-project.jpg";
-    
-            if (!projectTitle || !projectDescription || !projectUrl) {
-                showToast("All fields are required!");
-                return;
-            }
+
     
             const xhr = new XMLHttpRequest();
             xhr.open("PUT", "https://q8f4zchkua.execute-api.us-east-2.amazonaws.com/projects");
@@ -222,3 +220,34 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+/**
+ * This class provides sanitization methods for text and URLs.
+ */
+class sanitization {
+
+    constructor() {
+    }
+
+    sanitizeText(input) {
+        return input
+            .trim()
+            .replace(/[<>]/g, '')
+            .replace(/['"]/g, '')
+            .replace(/[;]/g, '');
+    }
+    
+    sanitizeURL(url) {
+        try {
+            const parsedUrl = new URL(url);
+            return parsedUrl.toString();
+        } catch (e) {
+            return '';
+        }
+
+    }
+}
+
+
+
+export default sanitization;
