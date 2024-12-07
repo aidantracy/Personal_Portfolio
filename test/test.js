@@ -1,4 +1,4 @@
-import sanitization from '../js/projects.js';
+import sanitization from '../js/sanitization.js';
 
 QUnit.module('Utility Functions', function() {
     QUnit.test('sanitizeText is a function', function(assert) {
@@ -13,11 +13,15 @@ QUnit.module('Utility Functions', function() {
         assert.false(cleanText.includes(';'), 'Semicolons should be removed');
     });
 
-    QUnit.test('sanitizeURL validates URLs', function(assert) {
+    QUnit.test('sanitizeURL validates URL', function(assert) {
         var sani = new sanitization();
         const validURL = 'https://example.com/';
-        const invalidURL = 'not-a-url';
         assert.equal(sani.sanitizeURL(validURL), validURL, 'Valid URL should remain unchanged');
+    });
+
+    QUnit.test('sanitizeURL invalidates URL', function(assert) {
+        var sani = new sanitization();
+        const invalidURL = 'not-a-url';
         assert.equal(sani.sanitizeURL(invalidURL), '', 'Invalid URL should return empty string');
     });
 });

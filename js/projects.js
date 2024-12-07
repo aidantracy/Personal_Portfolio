@@ -20,7 +20,11 @@ const baseProjects = [
     }
 ];
 
-// Function to show toast message
+/**
+ * This function displays a toast message for 3 seconds. 
+ * @param {*} message 
+ * @param {*} duration 
+ */
 function showToast(message, duration = 3000) {
     const toast = document.getElementById('toast');
     toast.textContent = message;
@@ -87,7 +91,9 @@ function createProjectCard(project) {
     return card;
 }
 
-// Loads and display all projects
+/**
+ * This function loads projects from the database.
+ */
 function loadProjects() {
     const xhr = new XMLHttpRequest();
     xhr.addEventListener("load", function () {
@@ -111,7 +117,11 @@ function loadProjects() {
     xhr.send();
 }
 
-// Delete a project
+/**
+ * This function deletes a project from the database.
+ * @param {*} projectId 
+ * @returns 
+ */
 function deleteProject(projectId) {
     if (!projectId) return;
 
@@ -132,7 +142,9 @@ function deleteProject(projectId) {
     xhr.send();
 }
 
-// Loads base projects
+/**
+ * This function loads sample projects into the database.
+ */
 function loadSampleProjects() {
     const projectsContainer = document.getElementById("projects-container");
     projectsContainer.innerHTML = "";
@@ -171,7 +183,9 @@ function loadSampleProjects() {
         });
 }
 
-// Initialize everything when the DOM is loaded
+/**
+ * This function initializes the projects page. 
+ */
 document.addEventListener("DOMContentLoaded", function () {
     // Load existing projects
     loadProjects();
@@ -220,34 +234,3 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
-
-/**
- * This class provides sanitization methods for text and URLs.
- */
-class sanitization {
-
-    constructor() {
-    }
-
-    sanitizeText(input) {
-        return input
-            .trim()
-            .replace(/[<>]/g, '')
-            .replace(/['"]/g, '')
-            .replace(/[;]/g, '');
-    }
-    
-    sanitizeURL(url) {
-        try {
-            const parsedUrl = new URL(url);
-            return parsedUrl.toString();
-        } catch (e) {
-            return '';
-        }
-
-    }
-}
-
-
-
-export default sanitization;

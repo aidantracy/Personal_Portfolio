@@ -115,7 +115,9 @@ function createProjectCard(project) {
     return card;
 }
 
-// Function to load and display projects
+/**
+ * This function loads projects from the DB and displays them in the projects preview section.
+ */
 function loadProjects() {
     const xhr = new XMLHttpRequest();
     xhr.addEventListener("load", function () {
@@ -146,7 +148,9 @@ function loadProjects() {
     xhr.send();
 }
 
-// Initialize everything when the DOM is loaded
+/**
+ * This function initializes the page and sets the current year in the footer.
+ */
 document.addEventListener("DOMContentLoaded", function () {
     const showProjectsBtn = document.getElementById("show-projects");
     const projectsPreview = document.getElementById("projects-preview");
