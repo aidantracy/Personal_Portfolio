@@ -197,8 +197,15 @@ h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; }
 .cyber-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .cyber-block { background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
 .cyber-block h4 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-faint); margin-bottom: 14px; }
-.cert-note { color: var(--text-dim); font-size: 0.92rem; }
-.cert-note span { color: var(--accent); font-weight: 600; }
+.cert-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.cert { display: flex; align-items: center; gap: 10px; font-size: 0.94rem; font-weight: 600; color: var(--text); }
+.cert-badge {
+  font-family: var(--font-mono); font-size: 0.66rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.04em; padding: 3px 8px; border-radius: 6px; white-space: nowrap;
+}
+.cert.earned .cert-badge { background: color-mix(in srgb, #22c55e 18%, transparent); color: #22c55e; }
+.cert.progress .cert-badge { background: color-mix(in srgb, var(--accent) 16%, transparent); color: var(--accent); }
+.cert.progress { color: var(--text-dim); }
 
 /* ============================== SKILLS ============================== */
 .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
