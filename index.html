@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aidan Tracy | Software Developer & Cybersecurity</title>
-  <meta name="description" content="Portfolio of Aidan Tracy — recent Computer Science graduate from Boise State University. Software development and cybersecurity projects, skills, and experience." />
+  <meta name="description" content="Portfolio of Aidan Tracy, a recent Computer Science graduate from Boise State University, with software development and cybersecurity projects, skills, and experience." />
   <meta name="author" content="Aidan Tracy" />
 
   <!-- Open Graph -->
@@ -85,8 +85,8 @@
         <div class="about-body">
           <p>
             I recently earned my Computer Science degree from Boise State
-            University, where I gravitated toward the parts of the field that
-            sit close to the machine — compilers, memory management, and the
+            University. The parts of the field I keep coming back to are the
+            ones close to the machine: compilers, memory management, and the
             security boundaries that keep software trustworthy.
           </p>
           <p>
@@ -95,8 +95,16 @@
             compressor in Zig, designed and implemented an interpreted
             programming language in Java, and shipped full-stack web
             applications. On the security side I focus on network and systems
-            security and secure coding practices — thinking about how software
-            fails and how to keep it from failing.
+            security and secure coding, which really come down to thinking about
+            how software fails and how to keep it from failing.
+          </p>
+          <p>
+            AI tools are a real part of how I work. I use them to move faster on
+            the routine parts of a project, like scaffolding code, talking
+            through design tradeoffs, debugging tricky errors, and filling out
+            tests, so I can spend more of my time on the hard problems. I always
+            treat what they produce as a starting point I read, understand, and
+            verify rather than something to paste in blindly.
           </p>
           <p>
             I'm now looking for full-time roles where I can keep doing both:
@@ -131,15 +139,46 @@
         <h2>Software Development</h2>
       </div>
       <p class="section-lede">
-        Projects that show how I think about systems, languages, and clean
-        implementation — from low-level compression to language design.
+        A few projects that show how I think about systems, languages, and
+        clean implementation, from low-level compression to building my own
+        language.
       </p>
 
       <div class="projects-grid">
+        <!-- Featured project -->
+        <article class="project-card">
+          <div class="project-media project-media--code">
+            <img src="assets/SS_Task_Tracker.png" alt="Task Tracking App" loading="lazy" />
+          </div>
+          <div class="project-content">
+            <div class="project-top">
+              <h3>LedgerLine: Financial Close Tracker</h3>
+              <span class="project-year">2026</span>
+            </div>
+            <p>
+              An industry-sponsored senior capstone and internship: a web app
+              that runs a hospital finance team's monthly close as a board of
+              milestone steps, each anchored to the Nth business day of the
+              month. Computes due dates with business-day and holiday math, rolls
+              recurring tasks forward each month, and tracks every task (Not
+              Started → In Progress → Stuck → Done) with owners, comment threads,
+              audit history, and soft-delete. Built with two teammates,
+              collaborating with the sponsor's cybersecurity team on
+              requirements, with full CI and a test suite.
+            </p>
+            <ul class="tag-list">
+              <li>Python</li><li>Flask</li><li>MySQL</li><li>Docker</li><li>SQLAlchemy</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/aidantracy/Tailored_Task_Tracker" target="_blank" rel="noopener">View Code →</a>
+            </div>
+          </div>
+        </article>
+
         <!-- Project 1 -->
         <article class="project-card">
           <div class="project-media">
-            <img src="assets/zig-file-compress.jpg" alt="Zig Huffman encoder" loading="lazy" />
+            <img src="assets/zig-file-compress.png" alt="Zig Huffman encoder" loading="lazy" />
           </div>
           <div class="project-content">
             <div class="project-top">
@@ -150,8 +189,8 @@
               A command-line file compression tool written in Zig that
               implements Huffman encoding from scratch. Builds frequency tables
               with hashmaps, constructs the Huffman tree, and performs bit-level
-              packing with custom memory allocators — a deep dive into manual
-              memory management and low-level I/O.
+              packing with custom memory allocators. Building it pushed me deep
+              into manual memory management and low-level I/O.
             </p>
             <ul class="tag-list">
               <li>Zig</li><li>Huffman Coding</li><li>Bit Manipulation</li><li>Memory Allocators</li>
@@ -175,9 +214,10 @@
             <p>
               A complete interpreter built in Java featuring a lexer, recursive
               descent parser, evaluator, control flow, and lexical scoping.
-              Developed test-first across five iterations — tokenizing source,
-              building a parse tree, and evaluating expressions and statements
-              with a managed environment and stack frames.
+              I built it test-first across five iterations, going from
+              tokenizing source to building a parse tree to evaluating
+              expressions and statements with a managed environment and stack
+              frames.
             </p>
             <ul class="tag-list">
               <li>Java</li><li>Lexer / Parser</li><li>Interpreters</li><li>TDD</li>
@@ -191,7 +231,7 @@
         <!-- Project 3 -->
         <article class="project-card">
           <div class="project-media">
-            <img src="assets/evil-circle.jpg" alt="Evil Circle browser game" loading="lazy" />
+            <img src="assets/ss_evil_circle.png" alt="Evil Circle browser game" loading="lazy" />
           </div>
           <div class="project-content">
             <div class="project-top">
@@ -200,9 +240,10 @@
             </div>
             <p>
               An interactive browser game built with JavaScript and the HTML5
-              Canvas API. Demonstrates object-oriented design, real-time
+              Canvas API. It uses object-oriented design with real-time
               animation loops, collision detection, and keyboard-driven player
-              control — a fun exercise in DOM and canvas rendering.
+              control, and it was a fun way to get hands-on with the DOM and
+              canvas rendering.
             </p>
             <ul class="tag-list">
               <li>JavaScript</li><li>HTML5 Canvas</li><li>OOP</li><li>Game Loop</li>
@@ -248,8 +289,8 @@
       </div>
       <p class="section-lede">
         My security focus centers on network &amp; systems security and secure
-        coding — understanding how systems are attacked, and building software
-        that holds up under pressure.
+        coding. I like understanding how systems are attacked and building
+        software that holds up under pressure.
       </p>
 
       <div class="cyber-grid">
@@ -259,7 +300,7 @@
           </div>
           <h3>Network &amp; Systems Security</h3>
           <p>
-            Securing infrastructure from the ground up — network fundamentals,
+            Securing infrastructure from the ground up: network fundamentals,
             firewalls and access control, Linux system hardening, and
             understanding common attack surfaces and how to reduce them.
           </p>
@@ -274,7 +315,7 @@
           </div>
           <h3>Secure Coding &amp; App Security</h3>
           <p>
-            Writing software that defends itself — input validation and
+            Writing software that defends itself: input validation and
             sanitization, awareness of the OWASP Top 10, defensive programming,
             and treating untrusted input as hostile by default.
           </p>
@@ -330,7 +371,7 @@
         <div class="skill-group">
           <h3>Concepts</h3>
           <ul class="chip-list">
-            <li>Data Structures</li><li>Algorithms</li><li>Compilers / Interpreters</li><li>Memory Management</li><li>Test-Driven Development</li><li>Secure Coding</li>
+            <li>Data Structures</li><li>Algorithms</li><li>Compilers / Interpreters</li><li>Memory Management</li><li>Test-Driven Development</li><li>Secure Coding</li><li>AI-Assisted Development</li>
           </ul>
         </div>
       </div>
